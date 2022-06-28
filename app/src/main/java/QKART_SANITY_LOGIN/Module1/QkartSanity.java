@@ -56,15 +56,13 @@ public class QkartSanity {
         registration.navigateToRegisterPage();
         status = registration.registerUser("testUser", "abc@123", true);
         if (!status) {
-             logStatus("TestCase 1", "Test Case Pass. User Registration Pass", "PASS");
+            logStatus("TestCase 1", "Test Case Pass. User Registration Pass",status ? "PASS" : "FAIL");
             logStatus("End TestCase", "Test Case 1: Verify user Registration : ", status ? "PASS" : "FAIL");
-
             // Return False as the test case Fails
             return false;
         } else {
             logStatus("TestCase 1", "Test Case Pass. User Registration Pass", "PASS");
         }
-
         // Save the last generated username
         lastGeneratedUserName = registration.lastGeneratedUsername;
 
@@ -155,6 +153,5 @@ public class QkartSanity {
             System.out.println(String.format("%s out of %s test cases Passed ", Integer.toString(passedTests),
                     Integer.toString(totalTests)));
         }
-
     }
 }
