@@ -25,6 +25,9 @@ public class Login {
     }
 
     public Boolean PerformLogin(String Username, String Password) throws InterruptedException {
+
+        
+
         // Find the Username Text Box
         WebElement username_txt_box = this.driver.findElement(By.id("username"));
 
@@ -40,6 +43,8 @@ public class Login {
         // Enter the password
         password_txt_box.sendKeys(Password);
 
+        Thread.sleep(3000);
+
         // Find the Login Button
         WebElement login_button = driver.findElement(By.className("button"));
 
@@ -50,18 +55,20 @@ public class Login {
         Thread.sleep(5000);
 
         return this.VerifyUserLoggedIn(Username);
+
     }
+
+
+
 
     public Boolean VerifyUserLoggedIn(String Username) {
         try {
             // Find the username label (present on the top right of the page)
             WebElement username_label;
-             username_label = this.driver.findElement(By.id("username-text"));
+            username_label = this.driver.findElement(By.className("username-text"));
             return username_label.getText().equals(Username);
         } catch (Exception e) {
             return false;
         }
-
     }
-
 }

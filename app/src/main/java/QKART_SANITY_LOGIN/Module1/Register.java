@@ -24,47 +24,46 @@ public class Register {
         }
     }
 
-    public Boolean registerUser(String Username, String Password, Boolean makeUsernameDynamic)
-            throws InterruptedException {
+    public Boolean registerUser(String Username, String Password, Boolean makeUsernameDynamic)throws InterruptedException {
         // Find the Username Text Box
-        WebElement username_txt_box = this.driver.findElement(By.id("username"));
+            WebElement username_txt_box = this.driver.findElement(By.id("username"));
 
-        // Get time stamp for generating a unique username
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+            // Get time stamp for generating a unique username
+            Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
-        String test_data_username;
-        if (makeUsernameDynamic)
-            // Concatenate the timestamp to string to form unique timestamp
-            test_data_username = Username + "_" + String.valueOf(timestamp.getTime());
-        else
-             test_data_username = Username + "_" + String.valueOf(timestamp.getTime());
+            String test_data_username;
+            if (makeUsernameDynamic)
+                // Concatenate the timestamp to string to form unique timestamp
+                test_data_username = Username + "_" + String.valueOf(timestamp.getTime());
+            else
+                test_data_username = Username;
 
-        // Type the generated username in the username field
-        username_txt_box.sendKeys(test_data_username);
+            // Type the generated username in the username field
+            username_txt_box.sendKeys(test_data_username);
+            // Find the password Text Box
 
-        // Find the password Text Box
-        WebElement password_txt_box = this.driver.findElement(By.id("password"));
-        String test_data_password = Password;
+            WebElement password_txt_box = this.driver.findElement(By.id("password"));
+            String test_data_password = Password;
 
-        // Enter the Password value
-        password_txt_box.sendKeys(test_data_password);
+            // Enter the Password value
+            password_txt_box.sendKeys(test_data_password);
 
-        // Find the Confirm password text box
-        WebElement confirm_password_txt_box;
-        confirm_password_txt_box = this.driver.findElement(By.id("confirmPassword"));
+            // Find the Confirm password text box
+            WebElement confirm_password_txt_box;
+            confirm_password_txt_box = this.driver.findElement(By.id("confirmPassword"));
 
-        // Enter the Confirm Password Value
-        confirm_password_txt_box.sendKeys(test_data_password);
+            // Enter the Confirm Password Value
+            confirm_password_txt_box.sendKeys(test_data_password);
 
-        // Find the register now button
-        WebElement register_now_button = this.driver.findElement(By.className("button"));
+            // Find the register now button
+            WebElement register_now_button = this.driver.findElement(By.className("button"));
+            // Click the register now button
+            register_now_button.click();
 
-        // Click the register now button
-        register_now_button.click();
-
-
-
-        this.lastGeneratedUsername = test_data_username;
-        return this.driver.getCurrentUrl().endsWith("/login");
+            this.lastGeneratedUsername = test_data_username;
+            //WebDriverWait wait = new WebDriverWait(driver, 20);
+            //wait.until(ExpectedConditions.visibilityOf(element));
+            Thread.sleep(3000);
+            return this.driver.getCurrentUrl().endsWith("/login");
     }
 }
