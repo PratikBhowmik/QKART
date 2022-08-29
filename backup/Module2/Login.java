@@ -26,6 +26,9 @@ public class Login {
     }
 
     public Boolean PerformLogin(String Username, String Password) throws InterruptedException {
+
+        
+
         // Find the Username Text Box
         WebElement username_txt_box = this.driver.findElement(By.id("username"));
 
@@ -50,10 +53,13 @@ public class Login {
 
         // SLEEP_STMT_13: Wait for Login to Complete
         // Wait for Login action to complete
-        Thread.sleep(5000);
-
+        // Thread.sleep(5000);
         return this.VerifyUserLoggedIn(Username);
+
     }
+
+
+
 
     public Boolean VerifyUserLoggedIn(String Username) {
         try {

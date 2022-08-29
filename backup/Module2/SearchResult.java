@@ -12,15 +12,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SearchResult {
     WebElement parentElement;
-
     public SearchResult(WebElement SearchResultElement) {
         this.parentElement = SearchResultElement;
     }
-
     /*
      * Return title of the parentElement denoting the card content section of a search result
      */
-    public String getTitleofResult() {
+    public String getTitleofResult() throws InterruptedException {
         String titleOfSearchResult = "";
         // TODO: CRIO_TASK_MODULE_TEST_AUTOMATION - TEST CASE 03: MILESTONE 1
         // Find the element containing the title (product name) of the search result and
@@ -47,7 +45,6 @@ public class SearchResult {
             return false;
         }
     }
-
     /*
      * Return Boolean denoting if the close size chart operation was successful
      */
@@ -55,6 +52,7 @@ public class SearchResult {
         try {
             Thread.sleep(2000);
             Actions action = new Actions(driver);
+            // Clicking on "ESC" key closes the size chart modal
             action.sendKeys(Keys.ESCAPE);
             action.perform();
             Thread.sleep(2000);
@@ -64,7 +62,6 @@ public class SearchResult {
             return false;
         }
     }
-
     /*
      * Return Boolean based on if the size chart exists
      */

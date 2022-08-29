@@ -29,7 +29,6 @@ public class Home {
             WebElement logout_button = driver.findElement(By.className("MuiButton-text"));
             logout_button.click();
 
-            // SLEEP_STMT_10: Wait for Logout to complete
             // Wait for Logout to Complete
             Thread.sleep(3000);
 
@@ -51,17 +50,15 @@ public class Home {
             WebElement searchBox = driver.findElement(By.xpath("//input[@name='search'][1]"));
             searchBox.clear();
             searchBox.sendKeys(product);
-            // WebDriverWait wait = new WebDriverWait(driver, 10);
-            // wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.tagName("button")));
-            // wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(String.format("//div[@class='MuiCardContent-root
-            // css-1qw96cp'][1]/p[contains(text(),'%s')]",product))));
+            //WebDriverWait wait = new WebDriverWait(driver, 10);
+            //wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.tagName("button")));
+            //wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(String.format("//div[@class='MuiCardContent-root css-1qw96cp'][1]/p[contains(text(),'%s')]",product))));
             return true;
         } catch (Exception e) {
             System.out.println("Error while searching for a product: " + e.getMessage());
             return false;
         }
     }
-
     /*
      * Returns Array of Web Elements that are search results and return the same
      */
@@ -103,6 +100,7 @@ public class Home {
      */
     public Boolean addProductToCart(String productName) {
         try {
+            // TODO: CRIO_TASK_MODULE_TEST_AUTOMATION - TEST CASE 05: MILESTONE 4
             /*
              * Iterate through each product on the page to find the WebElement corresponding to the
              * matching productName
@@ -131,7 +129,6 @@ public class Home {
             return false;
         }
     }
-
     /*
      * Return Boolean denoting the status of clicking on the checkout button
      */
@@ -151,7 +148,6 @@ public class Home {
             return status;
         }
     }
-
     /*
      * Return Boolean denoting the status of change quantity of product in cart operation
      */
@@ -197,7 +193,6 @@ public class Home {
             return false;
         }
     }
-
     /*
      * Return Boolean denoting if the cart contains items as expected
      */
