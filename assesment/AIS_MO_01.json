@@ -81,7 +81,7 @@
         {
           "object_notation": "COMMAND",
           "operator": "contains",
-          "expected_value": "yonex"
+          "expected_value": "YONEX"
         },
         {
           "object_notation": "RESPONSE",

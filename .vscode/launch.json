@@ -21,7 +21,8 @@
             "type": "java",
             "name": "Debug (Launch)-App<QKART_SANITY_LOGIN>",
             "request": "launch",
-            "mainClass": "QKART_SANITY_LOGIN.QkartSanity",
+            "mainClass": "QKART_SANITY_LOGIN.Module1.QkartSanity",
+            "mainClass": "QKART_SANITY_LOGIN.Module4.QkartSanityV2",
             "preLaunchTask": "selenium-start"
         }
     ]
