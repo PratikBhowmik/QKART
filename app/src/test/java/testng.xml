@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="E-Commerce application test for QKart">
+
+<parameter name = "username" value = "testUser"/>
+<parameter name = "password" value = "abc@123"/>
+<parameter name = "ListOfProductsToAddToCart" value = "Stylecon 9 Seater RHS Sofa Set"/>
+
+<listeners>
+<listener class-name = "QKART_TESTNG.ListenerClass"/>
+</listeners>
+
+  <test name="QKart-Sanity_tests">
+  
+  <groups>
+  <run>
+  <include name = "Sanity"/>
+  <include name = "Regression"/>
+  </run>
+  </groups>
+  
+  <parameter name = "validProductName" value = "YONEX"/>
+  <parameter name = "invalidProductName" value = "Gesundheit"/>
+  <parameter name = "productone" value = "YONEX Smash Badminton Racquet"/>
+  <parameter name = "producttwo" value = "Tan leatherate"/>
+  <parameter name = "productthree" value = "Yarine"/>
+  <parameter name = "productfour" value = "Stylecon 9 Seater RHS Sofa Set"/>
+  <parameter name = "productfive" value ="Xtend Smart Watch"/>
+  <parameter name = "address" value = "Addr line 1 addr Line 2 addr line 3"/>
+  <parameter name = "quantity" value = "60"/>
+  <parameter name = "contactUsUsername" value ="crio user"/>
+  <parameter name = "contactUsEmail" value = "criouser@gmail.com"/>
+  <parameter name = "queryContent" value = "Testing the contact us page"/>
+
+  <packages>
+  <package name = "QKART_TESTNG"/>
+  </packages>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
