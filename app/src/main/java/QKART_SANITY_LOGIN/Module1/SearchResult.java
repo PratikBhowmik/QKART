@@ -46,7 +46,6 @@ public class SearchResult {
         try {
             Thread.sleep(2000);
             Actions action = new Actions(driver);
-
             action.sendKeys(Keys.ESCAPE);
             action.perform();
             Thread.sleep(2000);
